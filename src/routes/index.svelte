@@ -1,4 +1,6 @@
 <script>
+  import { onMount } from 'svelte';
+
   let todos = [];
   let value = '';
 
@@ -21,6 +23,20 @@
       .catch(console.error);
     event.target.reset();
   }
+
+  function fetchPosts() {
+    fetch('/api/posts')
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        todos = res;
+      })
+      .catch(console.error);
+  }
+
+  onMount(() => {
+    fetchPosts();
+  });
 </script>
 
 <h1>Todo-List</h1>
