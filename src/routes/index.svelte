@@ -37,15 +37,38 @@
   onMount(() => {
     fetchPosts();
   });
+
+  let editing = null;
+  let editingValue = '';
+
+  $: if (editing) setEditing(editing);
+
+  function setEditing(editing) {
+    console.log(editing);
+    editingValue = editing.entry;
+  }
 </script>
+
+{#if editing}
+  <dialog open>
+    <h2>Edit Todos</h2>
+    <form>
+      <input type="text" bind:value={editingValue} required />
+      <button type="submit">Confirm</button>
+    </form>
+  </dialog>
+{/if}
 
 <h1>Todo-List</h1>
 <ul>
   {#each todos as todo}
-    <li>{todo.entry}</li>
+    <li>{todo.entry} <button on:click={() => (editing = todo)}>Edit</button></li>
   {/each}
 </ul>
 <form on:submit|preventDefault={handleSubmit}>
   <input type="text" bind:value required />
   <button type="submit">Add</button>
 </form>
+
+<style>
+</style>
