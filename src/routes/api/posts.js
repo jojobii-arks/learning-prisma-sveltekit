@@ -1,4 +1,4 @@
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client/index.js';
 import errorHandler from '$lib/error-handler';
 const prisma = new PrismaClient();
 

@@ -1,4 +1,7 @@
-import { PrismaClientKnownRequestError, PrismaClientValidationError } from '@prisma/client/runtime';
+import {
+	PrismaClientKnownRequestError,
+	PrismaClientValidationError
+} from '@prisma/client/runtime/index.js';
 
 /**
  * Function to handle errors from within API endpoints.
