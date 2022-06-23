@@ -94,16 +94,17 @@
 {#if editing}
   <div on:click|self={() => (editing = null)} class="modal modal-open">
     <div class="modal-box">
-      <h2>Edit Todos</h2>
-      <form on:submit|preventDefault={handleEditSubmit}>
+      <form on:submit|preventDefault={handleEditSubmit} class="flex flex-col gap-4">
+        <label for="edit"> Editing Post </label>
         <input
           bind:this={editingInput}
+          id="edit"
           type="text"
           class="input input-bordered"
           bind:value={editingValue}
           required
         />
-        <button type="submit">Confirm</button>
+        <button type="submit" class="btn btn-success btn-xs">Confirm</button>
       </form>
     </div>
   </div>
