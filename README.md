@@ -1,3 +1,8 @@
+### Preview
+
+![sveltekit-prisma-crud](https://user-images.githubusercontent.com/78003700/175357915-f3cadf23-b8f1-46ed-bb43-925c4fd80362.gif)
+
+
 ### Development guide
 
 - Start up PostgreSQL server somewhere (use https://hub.docker.com/_/postgres/)
